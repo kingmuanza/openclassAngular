@@ -1,0 +1,21 @@
+<li [ngClass]="{'list-group-item': true,
+'list-group-item-success': post.loveIts > 0,
+'list-group-item-danger': post.loveIts < 0}">
+
+    <span style="float: right;">
+        {{post.createdAt | date: 'MM/dd/yyyy hh:mm a' }}
+    </span>
+    <h2>{{post.title}}</h2>
+    <p>
+        {{post.content}}
+    </p>
+    <div>
+        <button (click)="post.onLoveIt() " class="btn btn-success" style="margin-right: 10px;">
+            Love it
+        </button>
+        <button (click)="post.onDontLoveIt() " class="btn btn-danger">
+            Don't love it
+        </button>
+    </div>
+
+</li>
